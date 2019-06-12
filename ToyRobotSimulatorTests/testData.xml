@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Rows>
+  <Row>
+    <Description>Example A</Description>
+    <Expected>0,1,NORTH</Expected>
+    <Commands>
+      PLACE 0,0,NORTH
+      MOVE
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Example B</Description>
+    <Expected>0,0,WEST</Expected>
+    <Commands>
+      PLACE 0,0,NORTH
+      LEFT
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Example C</Description>
+    <Expected>3,3,NORTH</Expected>
+    <Commands>
+      PLACE 1,2,EAST
+      MOVE
+      MOVE
+      LEFT
+      MOVE
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Moves That Would Cause A Fall Are Ignored</Description>
+    <Expected>0,4,NORTH</Expected>
+    <Commands>
+      PLACE 0,0,NORTH
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Calling Report When Not Placed Is Ignored</Description>
+    <Expected></Expected>
+    <Commands>
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Placing At An Invalid Location Is Ignored</Description>
+    <Expected></Expected>
+    <Commands>
+      PLACE 6,6,NORTH
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Commands Prior To Place Are Ignored</Description>
+    <Expected>1,0,EAST</Expected>
+    <Commands>
+      LEFT
+      MOVE
+      RIGHT
+      RIGHT
+      MOVE
+      PLACE 0,0,NORTH
+      RIGHT
+      MOVE
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Handle Different Cases</Description>
+    <Expected>3,0,SOUTH</Expected>
+    <Commands>
+      PlAce 2,2,soUTh
+      mOve
+      Move
+      Left
+      move
+      rIghT
+      rePORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Additional Whitespace Is Ignored</Description>
+    <Expected>3,2,WEST</Expected>
+    <Commands>PLACE 4,4,EAST
+                 RIGHT     
+MOVE      
+               MOVE   
+      RIGHT 
+MOVE  
+         REPORT   
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Additional Example 1</Description>
+    <Expected>2,2,NORTH</Expected>
+    <Commands>
+      PLACE 2,2,NORTH
+      MOVE
+      RIGHT
+      MOVE
+      RIGHT
+      MOVE
+      RIGHT
+      MOVE
+      RIGHT
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Additional Example 2</Description>
+    <Expected>4,3,EAST</Expected>
+    <Commands>
+      PLACE 2,2,NORTH
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      MOVE
+      RIGHT
+      MOVE
+      RIGHT
+      MOVE
+      LEFT
+      MOVE
+      MOVE
+      REPORT
+    </Commands>
+  </Row>
+  <Row>
+    <Description>Additional Example 3</Description>
+    <Expected>1,0,NORTH</Expected>
+    <Commands>
+      PLACE 1,1,SOUTH
+      MOVE
+      RIGHT
+      RIGHT
+      REPORT
+    </Commands>
+  </Row>
+</Rows>
