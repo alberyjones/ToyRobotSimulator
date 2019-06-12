@@ -6,6 +6,8 @@ The main robot simulator library is in the *.\ToyRobotSimulator* folder, with th
 
 The *.\ToyRobotSimulator\ToyRobotSimulator.sln* solution includes both projects.
 
+The application can be run with the path to a file as the argument on the command line or can accept commands directly in the console.  Pressing enter with no command will exit the application.
+
 A brief guide to the key classes:
 
 ## ToyRobot ##
